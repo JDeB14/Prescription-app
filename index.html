@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find out if you are near-sighted or far-sighted with this Prescription Investigator Calculator"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Prescription Investigator</title>
+    <style>
+      body {
+        background: #e3e3e3;
+      }
+      .content {
+        background: linear-gradient(
+          99.6deg,
+          rgb(112, 128, 152) 10.6%,
+          rgb(242, 227, 234) 32.9%,
+          rgb(234, 202, 213) 52.7%,
+          rgb(220, 227, 239) 72.8%,
+          rgb(185, 205, 227) 81.1%,
+          rgb(154, 180, 212) 102.4%
+        );
+        margin: 40px 10px;
+        padding: 30px;
+        border-radius: 10px;
+      }
+      h1 {
+        color: #113f67;
+        text-align: center;
+        font-family: monospace;
+        font-size: 45px;
+      }
+      hr {
+        max-width: 100%;
+      }
+      img {
+        border: 6px ridge #455d7a;
+      }
+      p {
+        line-height: 2;
+        padding: 0px 20px;
+        font-size: 17px;
+        text-align: center;
+      }
+      em {
+        font-weight: bold;
+      }
+      a {
+        font-size: 14px;
+        color: #113f67;
+        font-weight: bold;
+      }
+
+      h2 {
+        color: #113f67;
+        font-size: 25px;
+        text-align: center;
+        font-family: monospace;
+      }
+      button {
+        display: block;
+        margin: 10px auto;
+        padding: 15px 25px;
+        transition: all 200ms ease;
+        font-size: 14px;
+        border-radius: 20px;
+        border: 2px solid #fae3e3;
+        background-color: #455d7a;
+        color: white;
+        box-shadow: 5px 5px 15px #455d7a;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: rgb(242, 227, 234);
+        color: black;
+        border-color: #455d7a;
+      }
+      .magnifier {
+        font-size: 16px;
+        padding-left: 2px;
+      }
+      footer {
+        text-align: center;
+        font-family: fantasy;
+      }
+      .name {
+        font-weight: bold;
+        padding-right: 1px;
+      }
+      @media (max-width: 576px) {
+        h1 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 16px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>👀 Am I Nearsighted or Farsighted? 👀</h1>
+          </div>
+          <div class="col-md-12">
+            <hr />
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/025/532/original/11-28-18doctor.jpg?1642985834"
+              alt="Optometrist with patient"
+              class="img-fluid d-block shadow"
+            />
+            <hr />
+          </div>
+          <div class="col-md-12">
+            <p>
+              Most eye doctors, or Optometrists, will tell you whether you're
+              nearsighted or farsighted at the end of the vision exam, but what
+              does that really mean? According to the dictionary,
+              nearsightedness, or Myopia, is defined as a refractive error due
+              to the focusing of rays of light by the eye at a point in front of
+              the retina. Farsightedness, or Hyperopia, is defined as a
+              refractive error due to the focusing of rays of light by the eye
+              at a point behind the retina.
+              <br />
+              With these fancy definitions, it's no wonder so many people often
+              get the two confused. Here's a simple way to remember which is
+              which. If you are
+              <em>nearsighted</em>, that means you have <strong>better</strong>
+              <em>sight at near</em>. So, things far away are hard to see. On
+              the other hand, if you are <em>farsighted</em>, you have
+              <strong>better</strong> <em>sight at far</em>.
+
+              <span>
+                <a
+                  href="https://en.wikipedia.org/wiki/Refractive_error"
+                  target="_blank"
+                  title="Learn more"
+                >
+                  Learn more on Wikipedia</a
+                >
+              </span>
+            </p>
+          </div>
+        </div>
+        <h2 class="mt-4">👓 What does my glasses prescription mean? 👓</h2>
+        <p class="mt-3">
+          The <strong>sphere</strong> (first) number on the printed or written
+          prescription from the Optometrist also determines if you are near or
+          far sighted depending on if the number is positive or negative. Grab
+          your prescription and use the
+          <strong>Prescription Investigator</strong> to find out what your
+          number means!
+        </p>
+        <button>
+          Prescription Investigator <span class="magnifier">🔍</span>
+        </button>
+        <br />
+        <footer>Coded by <span class="name">Dr. Jae DeBerry</span> 👩🏾‍⚕️</footer>
+      </div>
+    </div>
+    <script>
+      function prescriptionInvestigator() {
+        let firstName = prompt("What is your first name?");
+        let sphere = prompt(
+          "What is the sphere (first) number on your prescription?"
+        );
+        if (sphere > 0) {
+          alert(`${firstName}, you are farsighted 🤓!`);
+        } else if (sphere < 0) {
+          alert(`${firstName}, you are nearsighted 🤓!`);
+        } else {
+          alert(`${firstName}, you are not nearsighted or farsighted 😎!`);
+        }
+      }
+      let button = document.querySelector("button");
+      button.addEventListener("click", prescriptionInvestigator);
+    </script>
+  </body>
+</html>
